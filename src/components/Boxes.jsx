@@ -1,15 +1,16 @@
 import React from 'react'
 
-const Boxes = () => {
+const Boxes = props => {
   return (
     <td
-      onClick={this.props.doTheClick}
+      onClick={props.doTheClick}
       onContextMenu={e => {
-        this.props.rightClick()
+        props.leftClick()
+        props.rightClick()
         e.preventDefault()
       }}
     >
-      {this.props.display}
+      {props.display}
     </td>
   )
 }
