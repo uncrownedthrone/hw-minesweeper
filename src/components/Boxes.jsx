@@ -3,11 +3,10 @@ import React from 'react'
 const Boxes = props => {
   return (
     <td
-      onClick={props.doTheClick}
+      onClick={props.leftClick}
       onContextMenu={e => {
-        props.leftClick()
-        props.rightClick()
         e.preventDefault()
+        props.rightClick()
       }}
     >
       {props.display}

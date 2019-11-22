@@ -30,3 +30,26 @@ td {
 tbody {
   text-align: center;
 }
+
+h1 {
+  color: red;
+}
+
+p {
+  color: green;
+  font-size: 1rem;
+}
+
+button {
+  background-color: red;
+  border: 3px solid green;
+  border-radius: 3px;
+  color: white;
+  width: 75px;
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+tr {
+  font-size: 1.5rem;
+}
