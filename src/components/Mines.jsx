@@ -1,3 +1,7 @@
+// TODO - refactor easy, medium, hard mode components
+// TODO - add check winner logic
+// TODO - change mines, flags, etc.
+
 import React, { useState, useEffect } from 'react'
 import Boxes from './Boxes'
 import axios from 'axios'
