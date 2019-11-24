@@ -1,17 +1,19 @@
+// DONE - add check winner logic
 // TODO - refactor easy, medium, hard mode components
-// TODO - add check winner logic
 // TODO - change mines, flags, etc.
 
 import React, { useState, useEffect } from 'react'
 import Boxes from './Boxes'
 import axios from 'axios'
+import Message from './Message'
 
 const Mines = () => {
   const apiUrl = 'https://minesweeper-api.herokuapp.com/games'
-  const [gameID, setGameID] = useState([])
+  const [gameID, setGameID] = useState('')
   const [board, setBoard] = useState([])
-  const [mines, setMines] = useState([])
-  const [state, setState] = useState([])
+  const [mines, setMines] = useState('')
+  const [state, setState] = useState('')
+
   const startGame = async () => {
     const resp = await axios.post(apiUrl)
     setGameID(resp.data.id)
@@ -29,6 +31,7 @@ const Mines = () => {
       row: x,
       col: y
     })
+    setGameID(resp.data.id)
     setBoard(resp.data.board)
     setMines(resp.data.mines)
     setState(resp.data.state)
@@ -39,6 +42,7 @@ const Mines = () => {
       row: x,
       col: y
     })
+    setGameID(resp.data.id)
     setBoard(resp.data.board)
     setMines(resp.data.mines)
     setState(resp.data.state)
@@ -68,26 +72,30 @@ const Mines = () => {
     setState(resp.data.state)
   }
 
-  const winnerLoserMessage = () => {
+  const message = () => {
     if (state === 'lost') {
-      return 'You Lost. Play again?'
-    } else if (state === 'win') {
-      return 'You Won! Play again?'
+      setState({
+        status: 'You lose!! Try again!'
+      })
+    } else if (state === 'won') {
+      setState({
+        status: 'You won! Play Again?'
+      })
     }
-    console.log('this is the ' + winnerLoserMessage())
   }
+
+  console.log('testing ' + message())
 
   return (
     <>
       <h1>Minesweeper</h1>
-      <p>To start a new game, choose a difficulty below:</p>
+      <Message displayResult={state.status} />
       <section className='gameButtons'>
         <button onClick={easyMode}>EASY</button>
         <button onClick={mediumMode}>MEDIUM</button>
         <button onClick={hardMode}>HARD</button>
-        <button onClick={startGame}>RESET</button>
+        <button onClick={startGame}>NEW GAME</button>
       </section>
-      <p className='winnerLoserMessage'>{winnerLoserMessage}</p>
       <section>
         <table>
           <tbody>
@@ -101,6 +109,10 @@ const Mines = () => {
                         display={board[i][j]}
                         leftClick={() => leftClick(i, j)}
                         rightClick={() => rightClick(i, j)}
+                        // isRevealed=
+                        // isFlagged=
+                        // isMine=
+                        // neightbor=
                       />
                     )
                   })}
@@ -109,6 +121,7 @@ const Mines = () => {
             })}
           </tbody>
         </table>
+        <p className='minesLeft'>Mines left: {mines}</p>
       </section>
     </>
   )
