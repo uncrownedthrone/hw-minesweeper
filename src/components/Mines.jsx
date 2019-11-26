@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react'
 import Boxes from './Boxes'
 import axios from 'axios'
 import Message from './Message'
+import Cells from './Cells'
 
 const Mines = () => {
   const apiUrl = 'https://minesweeper-api.herokuapp.com/games'
@@ -15,15 +16,12 @@ const Mines = () => {
   const [state, setState] = useState('')
 
   const startGame = async () => {
-    const resp = await axios.post(apiUrl)
-    setGameID(resp.data.id)
+    const resp = await axios.post(apiUrl), {difficulty: diff}
     setBoard(resp.data.board)
-    setMines(resp.data.mines)
-    setState(resp.data.state)
   }
 
   useEffect(() => {
-    startGame()
+    startGame(0)
   }, [])
 
   const leftClick = async (x, y) => {
@@ -91,9 +89,27 @@ const Mines = () => {
       <h1>Minesweeper</h1>
       <Message displayResult={state.status} />
       <section className='gameButtons'>
-        <button onClick={easyMode}>EASY</button>
-        <button onClick={mediumMode}>MEDIUM</button>
-        <button onClick={hardMode}>HARD</button>
+        <button
+          onClick={() => {
+            startGame(0)
+          }}
+        >
+          EASY
+        </button>
+        <button
+          onClick={() => {
+            startGame(1)
+          }}
+        >
+          MEDIUM
+        </button>
+        <button
+          onClick={() => {
+            startGame(2)
+          }}
+        >
+          Hard
+        </button>
         <button onClick={startGame}>NEW GAME</button>
       </section>
       <section>
@@ -101,7 +117,8 @@ const Mines = () => {
           <tbody>
             {board.map((col, i) => {
               return (
-                <tr key={i}>
+                <tr>
+                <td key={i}>
                   {col.map((row, j) => {
                     return (
                       <Boxes
@@ -109,13 +126,11 @@ const Mines = () => {
                         display={board[i][j]}
                         leftClick={() => leftClick(i, j)}
                         rightClick={() => rightClick(i, j)}
-                        // isRevealed=
-                        // isFlagged=
-                        // isMine=
-                        // neightbor=
                       />
+                      <Cell data={col}/>
                     )
                   })}
+                </td>
                 </tr>
               )
             })}
