@@ -1,14 +1,14 @@
 import React from 'react'
 
-const Cells = prop => {
-  if (prop.data === '#') {
+const Cells = props => {
+  if (props.data === '#') {
     return '💣'
-  } else if (prop.data === 'F') {
+  } else if (props.data === 'F') {
     return '🚩'
   } else if (props.data === '_') {
     return ' '
   } else {
-    return <>{prop.data}</>
+    return <>{props.data}</>
   }
 }
 
