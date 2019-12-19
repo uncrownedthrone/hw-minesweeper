@@ -48,22 +48,10 @@ const Mines = () => {
     setState(resp.data.state)
   }
 
-  const message = () => {
-    if (state === 'lost') {
-      setState({
-        status: 'You lose! Try again!'
-      })
-    } else if (state === 'won') {
-      setState({
-        status: 'You won! Play Again?'
-      })
-    }
-  }
-
   return (
     <>
       <h1>Minesweeper</h1>
-      <Message displayResult={state.status} />
+      <Message displayResult={state} />
       <Buttons
         easyLevel={() => startGame(0)}
         mediumLevel={() => startGame(1)}
