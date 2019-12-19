@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Cells = props => {
-  if (props.data === '#') {
+  if (props.data === '*') {
     return '💣'
   } else if (props.data === 'F') {
     return '🚩'

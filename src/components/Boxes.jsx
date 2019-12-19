@@ -1,4 +1,5 @@
 import React from 'react'
+import Cells from './Cells'
 
 const Boxes = props => {
   return (
@@ -9,7 +10,7 @@ const Boxes = props => {
         props.rightClick()
       }}
     >
-      {props.display}
+      <Cells data={props.display} />
     </td>
   )
 }
