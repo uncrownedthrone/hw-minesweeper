@@ -5,6 +5,8 @@ For this assignment, we used an API developed by SDG to create a Minesweeper clo
 
 This assignment had me scratching my head several times and got me a little frustrated more than once. The combination of new technoloiges combined with having only the basic knowledge of others left me with very few things to be confident about. To combat this, I first started by focusing on what I knew I was good at, which was CSS. I chose a Christmas theme was able to utilize custom fonts and my other CSS knowledge to perfect the look of the project. After this initial success, I felt more confident in attacking the bigger issues.
 
+![p1-1](https://user-images.githubusercontent.com/52833074/73208681-de1fd180-4114-11ea-84f7-5ba3c9072068.jpg)
+
 Technologies Used: 
 
 - React.js
