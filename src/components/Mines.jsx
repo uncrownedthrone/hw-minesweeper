@@ -80,6 +80,9 @@ const Mines = () => {
         </table>
         <p className='minesLeft'>Mines left: {mines}</p>
       </section>
+      <footer>
+        Made with <i class='fas fa-candy-cane'></i> at SDG
+      </footer>
     </>
   )
 }
