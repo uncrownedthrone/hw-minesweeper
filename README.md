@@ -11,3 +11,5 @@ Technologies Used:
 - HTML
 - CSS
 - RESTful API
+
+Deployed on Netlify: https://hw-minesweeper-justin.netlify.com
