@@ -1,5 +1,5 @@
 # Minesweeper Clone
-## Minesweeper Christmas
+## Deployed on Netlify: https://js-minesweeper.netlify.com
 
 For this assignment, we used an API developed by SDG to create a Minesweeper clone. This was a very challenging assignment for me as it was one of our first introductions to APIs while I was still working on solidifying knowledge of JavaScript and React.js. However, after working diligently with fellow students and our core instructor, I came away with a better understanding of all of the technologies involved.
 
@@ -11,5 +11,3 @@ Technologies Used:
 - HTML
 - CSS
 - RESTful API
-
-Deployed on Netlify: https://hw-minesweeper-justin.netlify.com
