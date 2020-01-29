@@ -3,7 +3,7 @@
 
 For this assignment, we used an API developed by SDG to create a Minesweeper clone. This was a very challenging assignment for me as it was one of our first introductions to APIs while I was still working on solidifying knowledge of JavaScript and React.js. However, after working diligently with fellow students and our core instructor, I came away with a better understanding of all of the technologies involved.
 
-This assignment had me scratching my head several times and got me a little frustrated more than once. The combination of new technoloiges combined with having only the basic knowledge of others left me with very few things to be confident about. To combat this, I first started by focusing on what I knew I was good at, which was CSS. I chose a Christmas theme was able to utilize custom fonts and my other CSS knowledge to perfect the look of the project. After this initial success, I felt more confident in attacking the bigger issues.
+This assignment had me scratching my head several times and got me a little frustrated more than once. The combination of new technoloiges combined with having only the basic knowledge of others left me with very few things to be confident about. To combat this, I first started by focusing on what I knew I was good at, which was CSS. I chose to create a Christmas theme and was able to utilize custom fonts and my other CSS knowledge to perfect the look of the project. After this initial success, I felt more confident in attacking the bigger issues.
 
 ![p1-1](https://user-images.githubusercontent.com/52833074/73376714-e2bac600-428b-11ea-9308-611289078c1b.jpg)
 
